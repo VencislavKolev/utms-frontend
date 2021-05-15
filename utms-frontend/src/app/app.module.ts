@@ -8,7 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProjectsComponent } from './projects/projects.component'
+import { ProjectsComponent } from './projects/projects.component';
+import { RunComponent } from './run/run.component'
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ProjectsComponent } from './projects/projects.component'
     FooterComponent,
     NotFoundPageComponent,
     ProjectsComponent,
+    RunComponent,
   ],
   imports: [
     BrowserModule,

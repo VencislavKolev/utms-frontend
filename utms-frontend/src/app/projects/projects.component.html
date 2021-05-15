@@ -1,9 +1,26 @@
 <h2>Projects:</h2>
-<nav>
-  <ul>
-    <li><a routerLink="/projects" routerLinkActive="active">First Component</a></li>
-    <li><a routerLink="/second" routerLinkActive="active">Second Component</a></li>
-  </ul>
-</nav>
-<!-- The routed views render in the <router-outlet>-->
+<!-- <div *ngFor="let post of projects">
+    {{post.name}}
+  </div> -->
+
+
+
+<div *ngIf="(projects$ | async) as projects">
+    <div style="color: red" *ngFor="let post of projects">
+        <h3>
+            <a [title]="post.name + ' details'" [routerLink]="['/products', post.id]">
+                {{ post.name }}
+            </a>
+        </h3>
+    </div>
+</div>
+<div *ngIf="!projects$">Loading...</div>
+
+<!-- <div *ngIf="(projects$ | async) as projects">
+    <div style="color: red" *ngFor="let post of projects">
+       Name: {{post.name}} <br> ID: {{post.id}}
+    </div>
+</div>
+<div *ngIf="!projects$">Loading...</div> -->
+
 <router-outlet></router-outlet>
