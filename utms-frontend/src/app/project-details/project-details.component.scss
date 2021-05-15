@@ -1,0 +1,38 @@
+.valid{
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.pr-name{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    color: green;
+}
+
+p{
+    margin-top: 5px;
+}
+
+#users {
+    border-collapse:collapse;
+    width: auto;
+  }
+  
+  #users td, #users th {
+    border: 2px solid #ddd;
+    padding: 8px;
+  }
+
+  #users tr:nth-child(odd) {
+    background-color: f2f2f2
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+.passed{
+    color: green
+   }
+   
+   .failed {
+   color: red
+   }

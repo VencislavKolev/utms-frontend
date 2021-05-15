@@ -9,7 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProjectsComponent } from './projects/projects.component';
-import { RunComponent } from './run/run.component'
+import { RunComponent } from './run/run.component';
+import { ProjectDetailsComponent } from './project-details/project-details.component'
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { RunComponent } from './run/run.component'
     NotFoundPageComponent,
     ProjectsComponent,
     RunComponent,
+    ProjectDetailsComponent,
   ],
   imports: [
     BrowserModule,

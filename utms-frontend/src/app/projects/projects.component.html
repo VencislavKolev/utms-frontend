@@ -6,9 +6,9 @@
 
 
 <div *ngIf="(projects$ | async) as projects">
-    <div style="color: red" *ngFor="let post of projects">
+    <div *ngFor="let post of projects">
         <h3>
-            <a [title]="post.name + ' details'" [routerLink]="['/products', post.id]">
+            <a [title]="post.name + ' details'" [routerLink]="['/projects', post.id]">
                 {{ post.name }}
             </a>
         </h3>
@@ -16,6 +16,7 @@
 </div>
 <div *ngIf="!projects$">Loading...</div>
 
+<!-- <app-project-details [projects]="projects$"></app-project-details> -->
 <!-- <div *ngIf="(projects$ | async) as projects">
     <div style="color: red" *ngFor="let post of projects">
        Name: {{post.name}} <br> ID: {{post.id}}

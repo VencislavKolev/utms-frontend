@@ -32,7 +32,7 @@ export class ProjectsComponent {
   projects$: Observable<Project[]> = this.postService.projects$;
 
   constructor(private postService: ProjectService) {
-    this.postService.loadPosts();
+    this.postService.loadProjects();
   }
 
 }

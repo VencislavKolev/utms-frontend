@@ -1,0 +1,52 @@
+<!-- <p>project-details works!</p>
+N: {{currentProject.name}}
+<br>
+D: {{currentProject.description}}
+ -->
+
+<div *ngIf="project">
+    <div class="valid">
+        <h2 class="pr-name">Project: {{project.name}}</h2>
+        <p>Description: {{project.description}}</p>
+    </div>
+
+    <!-- <div *ngFor="let run of project.testRuns">
+        <p>{{run.status}}</p>
+        <p>{{run.runForProject}}</p>
+    </div> -->
+
+    <div>
+        <div *ngIf="testRun">
+            <h3>Status: {{testRun.status}}</h3>
+        </div>
+        <h3>Status: {{project.testRuns[0].status}}</h3>
+        <h4>Last 5 runs:</h4>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<table id="users" >
+    <tr>
+        <!-- <th>Run</th>
+        <th>Status</th> -->
+
+        <!-- <th *ngFor = "let column of headers">
+            {{column}}
+          </th> -->
+        
+    </tr>
+
+    <tr *ngFor="let run of project.testRuns" [ngClass]="run.status | lowercase">
+        <td *ngFor="let column of headers">
+            {{run[column]}}
+        </td>
+    </tr>
+
+</table>
