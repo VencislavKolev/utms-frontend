@@ -18,6 +18,8 @@ export class ProjectDetailsComponent implements OnInit {
   message: string = '';
   headers: string[] = ['runForProject', 'status'];
 
+  flag: boolean;
+
   constructor(
     private projectService: ProjectService,
     private route: ActivatedRoute,
@@ -27,8 +29,7 @@ export class ProjectDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.message = '';
     this.getProject(this.route.snapshot.paramMap.get('id'));
-    //this.getTestRuns();
-    //this.getLastRun();
+    this.getLastRun();
   }
 
   getProject(id): void {
@@ -62,10 +63,19 @@ export class ProjectDetailsComponent implements OnInit {
 
   getLastRun(): void {
     console.log(1);
-    let len = this.project.testRuns.length;
-    this.testRun = this.project.testRuns[len-1];
+    let length = this.project.testRuns.length;
+    this.testRun = this.project.testRuns[0];
+    this.flag = this.testRun.status == 'PASSED' ? true : false;
     console.log(2);
+  }
 
+  sortByRunId() {
+    let runs = this.project.testRuns;
+    console.log("Array", runs);
+    runs.sort((b, a) => {
+      return a.runForProject - b.runForProject;
+    });
+    console.log("Array Sorted", runs)
   }
 }
 
