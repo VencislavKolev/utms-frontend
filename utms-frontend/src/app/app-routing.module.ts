@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: '', component: ProjectsComponent },
   { path: 'projects', pathMatch: 'full', redirectTo: '' },
   { path: 'projects/:id', component: ProjectDetailsComponent },
+  { path: 'projects/:id/runs/:runForProject', component: RunComponent},
   { path: '404', component: NotFoundPageComponent },
   { path: '**', redirectTo: '404' },
 ];

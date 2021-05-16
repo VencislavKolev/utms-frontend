@@ -23,8 +23,12 @@ export class ProjectService {
       next: (val) => this.projects.next(val)
     });
   }
-  
+
   getProjectById(id: number): Observable<Project> {
     return this.http.get<any>(`${this.apiServerUrl}/${id}`);
+  }
+
+  loadTestRun(projectId: number, runId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiServerUrl}/${projectId}/runs/${runId}`);
   }
 }

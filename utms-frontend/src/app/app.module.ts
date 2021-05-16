@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProjectsComponent } from './projects/projects.component';
 import { RunComponent } from './run/run.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component'
+import { MatTreeModule } from '@angular/material/tree';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatTreeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

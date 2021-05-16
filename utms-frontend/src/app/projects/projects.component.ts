@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Project } from '../project';
-// import { Project } from '../project';
 import { ProjectService } from '../project.service';
 
 @Component({
@@ -11,28 +10,10 @@ import { ProjectService } from '../project.service';
 })
 export class ProjectsComponent {
 
-  // public projects: Project[];
+  projects$: Observable<Project[]> = this.projectService.projects$;
 
-  //  constructor(private projectService: ProjectService) { }
-
-  // ngOnInit(): void {
-  //   this.getProjects();
-  // }
-
-  // public getProjects(): void {
-  //   this.projectService.getProjects().subscribe(
-  //     (response: Project[]) => {
-  //       this.projects = response;
-  //       console.log(this.projects);
-
-  //     }
-  //   )
-  // }
-
-  projects$: Observable<Project[]> = this.postService.projects$;
-
-  constructor(private postService: ProjectService) {
-    this.postService.loadProjects();
+  constructor(private projectService: ProjectService) {
+    this.projectService.loadProjects();
   }
 
 }
