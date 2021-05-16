@@ -11,10 +11,6 @@ export class ProjectService {
 
   private apiServerUrl = environment.apiServerUrl;
 
-  // constructor(private http: HttpClient) { }
-
-
-
   private projects: BehaviorSubject<any> = new BehaviorSubject(null);
   projects$ = this.projects.asObservable();
 

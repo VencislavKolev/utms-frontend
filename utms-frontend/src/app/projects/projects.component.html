@@ -7,7 +7,7 @@
 
 <div *ngIf="(projects$ | async) as projects">
     <div *ngFor="let post of projects">
-        <h3>
+        <h3 class="raise">
             <a [title]="post.name + ' details'" [routerLink]="['/projects', post.id]">
                 {{ post.name }}
             </a>

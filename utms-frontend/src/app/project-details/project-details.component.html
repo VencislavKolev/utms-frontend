@@ -3,6 +3,9 @@ N: {{currentProject.name}}
 <br>
 D: {{currentProject.description}}
  -->
+       
+{{testRun.status}} 
+{{testRun.id}}
 
 <div *ngIf="project">
     <div class="valid">
@@ -16,19 +19,13 @@ D: {{currentProject.description}}
     </div> -->
 
     <div>
-        <div *ngIf="testRun">
+        <!-- <div *ngIf="testRun">
             <h3>Status: {{testRun.status}}</h3>
-        </div>
+        </div> -->
         <h3>Status: {{project.testRuns[0].status}}</h3>
         <h4>Last 5 runs:</h4>
     </div>
 </div>
-
-
-
-
-
-
 
 
 
@@ -43,8 +40,8 @@ D: {{currentProject.description}}
         
     </tr>
 
-    <tr *ngFor="let run of project.testRuns" [ngClass]="run.status | lowercase">
-        <td *ngFor="let column of headers">
+    <tr *ngFor="let run of project.testRuns.slice(0, 5); let i = index" [ngClass]="run.status | lowercase">
+        <td *ngFor="let column of headers ">
             {{run[column]}}
         </td>
     </tr>

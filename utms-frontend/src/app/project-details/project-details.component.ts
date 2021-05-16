@@ -12,9 +12,9 @@ import { TestRun } from '../testRun';
 })
 export class ProjectDetailsComponent implements OnInit {
 
-  project: Project = null;
+  project: Project;
   testRuns: TestRun[] = [];
-  testRun: TestRun;
+  testRun: any;
   message: string = '';
   headers: string[] = ['runForProject', 'status'];
 
@@ -28,7 +28,7 @@ export class ProjectDetailsComponent implements OnInit {
     this.message = '';
     this.getProject(this.route.snapshot.paramMap.get('id'));
     //this.getTestRuns();
-    this.getFirstRun();
+    //this.getLastRun();
   }
 
   getProject(id): void {
@@ -37,6 +37,7 @@ export class ProjectDetailsComponent implements OnInit {
         data => {
           this.project = data;
           console.log(data);
+          this.getLastRun();
         },
         error => {
           console.log(error);
@@ -59,11 +60,12 @@ export class ProjectDetailsComponent implements OnInit {
   //   console.log(1);
   // }
 
-  getFirstRun(): void {
+  getLastRun(): void {
     console.log(1);
-    this.testRun = this.project.testRuns[0];
+    let len = this.project.testRuns.length;
+    this.testRun = this.project.testRuns[len-1];
     console.log(2);
-    
+
   }
 }
 
